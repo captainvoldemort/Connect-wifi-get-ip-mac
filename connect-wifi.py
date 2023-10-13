@@ -2,7 +2,12 @@ import subprocess
 
 def connect_to_wifi(ssid, password):
     try:
-        # Check if the Wi-Fi network is already in the list of known networks
+        cmd = "nmcli c down"
+        result = subprocess.run(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+
+        cmd = "nmcli dev wifi list"
+        result = subprocess.run(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+
         cmd = f"nmcli c s | grep '{ssid}'"
         result = subprocess.run(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
@@ -25,6 +30,6 @@ def connect_to_wifi(ssid, password):
         print("Error:", str(e))
 
 # Usage example
-wifi_ssid = "YourWiFiNetwork"
-wifi_password = "YourWiFiPassword"
+wifi_ssid = "Docky"
+wifi_password = "cgfv4299"
 connect_to_wifi(wifi_ssid, wifi_password)
