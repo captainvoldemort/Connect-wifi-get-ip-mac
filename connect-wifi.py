@@ -30,6 +30,6 @@ def connect_to_wifi(ssid, password):
         print("Error:", str(e))
 
 # Usage example
-wifi_ssid = "Docky"
-wifi_password = "cgfv4299"
+wifi_ssid = "SSID_HERE"
+wifi_password = "PASSWORD_HERE"
 connect_to_wifi(wifi_ssid, wifi_password)
