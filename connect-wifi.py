@@ -4,7 +4,7 @@ def connect_to_wifi(ssid, password):
     try:
         # Check if the Wi-Fi network is already in the list of known networks
         cmd = f"nmcli c s | grep '{ssid}'"
-        result = subprocess.run(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+        result = subprocess.run(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
         if result.returncode == 0:
             # If the network is already in the list, you can activate it
@@ -13,13 +13,13 @@ def connect_to_wifi(ssid, password):
             # If the network is not in the list, add it and then activate
             cmd = f"nmcli d wifi connect '{ssid}' password '{password}'"
 
-        result = subprocess.run(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+        result = subprocess.run(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
         if result.returncode == 0:
             print(f"Connected to {ssid} successfully.")
         else:
             print(f"Failed to connect to {ssid}.")
-            print(result.stderr)
+            print(result.stderr.decode('utf-8'))
 
     except Exception as e:
         print("Error:", str(e))
