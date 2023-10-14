@@ -23,7 +23,7 @@ python connect-wifi.py
 
 ```
 
-## **`getip.py`**
+## **`get-ip.py`**
 
 This script retrieves the IP address of your Jetson device by creating a socket connection to a sample remote server. It performs the following task:
 
@@ -38,7 +38,7 @@ Run the script with Python to retrieve the IP address of your Jetson device.
 Example:
 
 ```bash
-python getip.py
+python get-ip.py
 
 ```
 
@@ -51,3 +51,7 @@ This script retrieves the MAC (Media Access Control) address of your Jetson devi
 Run the script with Python to retrieve the MAC address of your Jetson device.
 
 Example:
+```bash
+python get-mac.py
+
+```
