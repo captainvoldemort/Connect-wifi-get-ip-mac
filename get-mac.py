@@ -1,4 +1,5 @@
 import psutil
+import uuid
 
 def get_mac_address():
     try:
