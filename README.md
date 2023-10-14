@@ -19,7 +19,6 @@ Replace **`"SSID_HERE"`** and **`"PASSWORD_HERE"`** in the script with your Wi-F
 Example:
 
 ```bash
-bashCopy code
 python connect-wifi.py
 
 ```
@@ -39,7 +38,6 @@ Run the script with Python to retrieve the IP address of your Jetson device.
 Example:
 
 ```bash
-bashCopy code
 python getip.py
 
 ```
